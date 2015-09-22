@@ -1,0 +1,16 @@
+@import "variables.less";
+@import "mixins/base/buttons.less";
+
+.btn{
+	.button-size(@button-padding-vertical; @button-padding-horizontal; @button-font-size; @button-line-height; @button-border-radius);
+}
+
+.btn-primary{
+	.button-variant(@button-text-color; @button-primary; @button-primary);
+}
+
+input[type='button']{
+	&.btn-block{
+		width:100%;
+	}
+}
