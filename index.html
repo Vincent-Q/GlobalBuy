@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SiBM</title>
+	<!-- load css files -->
+	<link rel="stylesheet" type="text/css" href="css/base/bootstrap.min.css">
+	<link rel="stylesheet/less" type="text/css" href="less/grid.less">
+	<link rel="stylesheet/less" type="text/css" href="less/forms.less">
+	<link rel="stylesheet/less" type="text/css" href="less/buttons.less">
+
+	<link rel="stylesheet/less" type="text/css" href="less/login.less">
+	<!-- load js files -->
+	<script type="text/javascript" src="lib/jquery.min.js"></script>
+	<script type="text/javascript" src="lib/bootstrap.min.js"></script>
+	<script type="text/javascript" src="lib/angular.min.js"></script>
+
+	<script type="text/javascript" src="js/controllers/LoginController.js"></script>
+	<script>
+	  less = {
+	    env: "development",
+	    async: false,
+	    fileAsync: false,
+	    poll: 1000,
+	    functions: {},
+	    dumpLineNumbers: "comments",
+	    relativeUrls: false,
+	    rootpath: ""
+	  };
+	</script>
+	<script type="text/javascript" src="lib/less.min.js"></script>
+</head>
+<body>
+	<div id="login" class="container" ng-app="loginMdl" ng-controller="LoginController as loginCtrl">
+		<div class="row">
+			<div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3">
+				<div class="title">
+					<img src="img/Global_title.png">
+					<img src="img/Earth_title.png">
+					<img src="img/Buy_title.png">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 contentBlock">
+				<input type="text" class="form-control" placeholder="User ID" ng-model="loginCtrl.userName">
+			</div>
+			<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 contentBlock">
+				<input type="password" class="form-control" placeholder="Password" ng-model="loginCtrl.pwd">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 contentBlock">
+				<div class="rememberMe">
+					<div class="check-box">
+						<span use-class="selected : loginCtrl.isStored" ng-click="loginCtrl.select()"></span>
+						<label>Remember me</label>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 contentBlock">
+				<input type="button" class="btn btn-primary btn-block" value="Login" ng-click="loginCtrl.login()">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0">
+				<label class="footBar labelFont">© Copyright WangWang_SEU Corporation</label>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
