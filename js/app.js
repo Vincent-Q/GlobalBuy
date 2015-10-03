@@ -1,7 +1,8 @@
 (function(){
 	var globalBuyApp = angular.module('globalBuyApp', [
 		'ngRoute',
-		'loginMdl'
+		'loginMdl',
+		'packageMdl'
 	]);
 
 	globalBuyApp.config(['$routeProvider', function($routeProvider){
