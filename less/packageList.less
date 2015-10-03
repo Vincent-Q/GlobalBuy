@@ -1,4 +1,5 @@
 @import "variables.less";
+@import "less/variables.less";
 
 #packageList{
 	.head{
@@ -22,13 +23,61 @@
 
 	.listItem{
 		border-bottom: solid 2px #d0d3d5;
-		padding-top: 32px;
-		padding-bottom: 32px;
+		padding-top: 23px;
+		padding-bottom: 23px;
+		font-size: 40px;
+		line-height: 1.6;
+
+		span{
+			padding-left: 32px;
+			&:hover{
+				text-decoration: @link-hover-decoration;
+				color: @link-hover-color;
+			}
+		}
+
+		.icon{
+			border: 2px solid #5596e6;
+    		border-radius: 32px;
+		    padding: 0px;
+		    width: 64px;
+		    height: 64px;
+		    display: inline-block;
+		    position: relative;
+		    top: 6px;
+		}
 
 		.item{
+			@-webkit-keyframes 'flight' {
+				0% {
+					transform: scale(0);
+				}
+
+				25% {
+					transform: scale(0.25);
+				}
+
+				50% {
+					transform: scale(0.5);
+				}
+
+				75% {
+					transform: scale(0.75);
+				}
+
+				100% {
+					transform: scale(1);
+				}
+
+			}
+
 			.glyphicon{
-				transform: scale(3);
-				transition: transform 0.5s;
+				padding: 10px;
+
+				-webkit-animation-name: 'flight';
+				-webkit-animation-duration: 1s;
+				-webkit-animation-timing-function: ease-in-out;
+				-webkit-animation-iteration-count: infinite;
 			}
 
 			label{
