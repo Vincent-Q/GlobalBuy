@@ -15,10 +15,5 @@
 			templateUrl: 'page/packageList.html',
 			controller: 'PackageListController'
 		});
-
-		$routeProvider.when('/packageListNew', {
-			templateUrl: 'page/packageListNew.html',
-			controller: 'PackageListController'
-		});		
 	}]);
 })();
