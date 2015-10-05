@@ -24,21 +24,27 @@
 	.list-group{
 		margin-left: -15px;
 		margin-right: -15px;
+		margin-top: -24px;
 	}
 
 	.list-group-item{
 		font-size: 40px;
 
-		span{
+		small, strong{
 			padding-left: 32px;
-			&:hover{
-				text-decoration: @link-hover-decoration;
-				color: @link-hover-color;
-			}
 		}
 
 		.time{
-			padding-left: 96px;
+			padding-left: 64px;
+			&:hover{
+				color: @brand-primary;
+				cursor: pointer;
+			}
+
+			.price{
+				float: right;
+				padding-right: 64px;
+			}
 		}
 
 		.icon{
@@ -50,28 +56,40 @@
 		    display: inline-block;
 		    position: absolute;
 
-		    &.preparing{
-		    	border-color: @brand-warning;
-		    }
-
-		    &.delivery{
-		    	border-color: @brand-primary;
-		    }
-
-		    &.finished{
-		    	border-color: @gray-darker;
-		    }
-
 		    .glyphicon{
 		    	padding: 10px;
 		    }
+		}
 
-		    &.preparing > .glyphicon, &.delivery > .glyphicon{
-				-webkit-animation-name: 'flight';
-				-webkit-animation-duration: 1s;
-				-webkit-animation-timing-function: ease-in-out;
-				-webkit-animation-iteration-count: infinite;
+		&.preparing{
+			color: @brand-warning;
+
+			.icon{
+				border-color: @brand-warning;
 			}
+		}
+
+		&.delivery{
+			color: @brand-info;
+		    
+		    .icon{
+		    	border-color: @brand-info;
+		    }
+		}
+
+		&.finished{
+			color: @gray-darker;
+		    
+			.icon{
+		    	border-color: @gray-darker;
+		    }
+		}
+
+		&.preparing > .icon > .glyphicon, &.delivery > .icon > .glyphicon{
+			-webkit-animation-name: 'flight';
+			-webkit-animation-duration: 1s;
+			-webkit-animation-timing-function: ease-in-out;
+			-webkit-animation-iteration-count: infinite;
 		}
 
 		@-webkit-keyframes 'flight' {
