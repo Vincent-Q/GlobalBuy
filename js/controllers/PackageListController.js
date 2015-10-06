@@ -2,6 +2,11 @@
 	var mdl = angular.module('packageMdl', []);
 
 	mdl.controller('PackageListController', function(){
-		this.userName = 'test';
+		this.clickSearch = function(){
+			$('.cursor').css({
+				'transform':'translateX(274px)',
+				'width': '110px'
+			});
+		};
 	});
 })();

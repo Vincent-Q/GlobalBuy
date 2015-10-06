@@ -18,7 +18,33 @@
 	}
 
 	.sectionTitle{
-		border-bottom: solid 4px #000000;
+		border-bottom: solid 4px @gray-darker;
+		padding-bottom: 0px;
+		padding-top: 0px;
+		font-size: 34px;
+
+		.nav-tabs, .cursor {
+			margin-left: -15px;
+
+			> li {
+				&.active > a {
+					color: @gray-darker;
+				}
+			}
+		}
+
+		.nav-tabs {
+			padding: 45px 0px;
+		}
+
+		.cursor{
+			width: 206px;
+			height: 4px;
+			background-color: @gray-darker;
+
+			transform: translateX(0);
+			transition: transform 0.5s ease-in;
+		}
 	}
 
 	.list-group{
