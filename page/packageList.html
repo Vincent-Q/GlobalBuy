@@ -11,10 +11,14 @@
 	<div class="row">
 		<div class="col-xs-12 sectionTitle">
 			<ul class="nav nav-tabs">
-				<li role="presentation" class="active"><a href="#/packageList">My Packages</a></li>
-				<li role="presentation"><a href="#/packageList" ng-click="pkgListCtrl.clickSearch()">Search</a></li>
+				<li role="presentation" use-class="active: pkgListCtrl.activeTab === 'My Packages'">
+					<a href="#/packageList" ng-click="pkgListCtrl.click('My Packages')">My Packages</a>
+				</li>
+				<li role="presentation" use-class="active: pkgListCtrl.activeTab === 'Search'">
+					<a href="#/packageList" ng-click="pkgListCtrl.click('Search')">Search</a>
+				</li>
 			</ul>
-			<div class="cursor"></div>
+			<div class="cursor" use-class="search: pkgListCtrl.activeTab === 'Search'"></div>
 		</div>
 	</div>
 	<div class="row">
