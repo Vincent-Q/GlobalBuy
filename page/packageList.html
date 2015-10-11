@@ -24,7 +24,11 @@
 	<div class="row">
 		<div class="col-xs-12">
 			<ul class="list-group">
-				<li class="list-group-item preparing">
+				<li ng-repeat="item in pkgListCtrl.packageList" class="list-group-item" use-class="preparing: item.status === 'preparing'; delivery: item.status === 'delivery'; finished: item.status === 'finished'">
+					<span class="icon"><span class="glyphicon" use-class="glyphicon-shopping-cart : item.status === 'preparing'; glyphicon-plane: item.status === 'delivery'; glyphicon-check: item.status === 'finished'"></span></span>
+					<span class="time"><small>{{item.deliveryDate}}</small><strong>{{item.goods}}</strong><small class="price">{{item.price}}</small></span>
+				</li>
+				<!--<li class="list-group-item preparing">
 					<span class="icon"><span class="glyphicon glyphicon-shopping-cart"></span></span>
 					<span class="time"><small>2015.10.07</small><strong> lush , Aptmil Milk Powder </strong><small class="price">$33.5</small></span>
 				</li>
@@ -43,7 +47,7 @@
 				<li class="list-group-item finished">
 					<span class="icon"><span class="glyphicon glyphicon-check"></span></span>
 					<span class="time"><small>2015.09.15</small><strong> lush , Aptmil Milk Powder </strong><small class="price">$33.5</small></span>
-				</li>
+				</li>-->
 			</ul>
 		</div>
 	</div>
