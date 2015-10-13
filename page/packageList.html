@@ -1,34 +1,6 @@
-<div id="packageListNew" class="container" ng-app="packageMdl" ng-controller="PackageListController as pkgListCtrl">
-	<div class="row head">
-		<div class="col-xs-6 col-xs-offset-3">
-			<div class="title">
-				<img src="img/Global_title_white.png">
-				<img src="img/Earth_title.png">
-				<img src="img/Buy_title_white.png">
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-xs-12 sectionTitle">
-			<ul class="nav nav-tabs">
-				<li role="presentation" use-class="active: pkgListCtrl.activeTab === 'My Packages'">
-					<a href="#/packageList" ng-click="pkgListCtrl.click('My Packages')">My Packages</a>
-				</li>
-				<li role="presentation" use-class="active: pkgListCtrl.activeTab === 'Search'">
-					<a href="#/packageList" ng-click="pkgListCtrl.click('Search')">Search</a>
-				</li>
-			</ul>
-			<div class="cursor" use-class="search: pkgListCtrl.activeTab === 'Search'"></div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-xs-12">
-			<ul class="list-group">
-				<li ng-repeat="item in pkgListCtrl.packageList" class="list-group-item" use-class="preparing: item.status === 'preparing'; delivery: item.status === 'delivery'; finished: item.status === 'finished'">
-					<span class="icon"><span class="glyphicon" use-class="glyphicon-shopping-cart : item.status === 'preparing'; glyphicon-plane: item.status === 'delivery'; glyphicon-check: item.status === 'finished'"></span></span>
-					<span class="time"><small>{{item.deliveryDate}}</small><strong>{{item.goods}}</strong><small class="price">{{item.price}}</small></span>
-				</li>
-			</ul>
-		</div>
-	</div>
-</div>
+<ul class="list-group">
+	<li ng-repeat="item in pkgListCtrl.packageList" class="list-group-item" use-class="preparing: item.status === 'preparing'; delivery: item.status === 'delivery'; finished: item.status === 'finished'">
+		<span class="icon"><span class="glyphicon" use-class="glyphicon-shopping-cart : item.status === 'preparing'; glyphicon-plane: item.status === 'delivery'; glyphicon-check: item.status === 'finished'"></span></span>
+		<span class="time"><small>{{item.deliveryDate}}</small><strong>{{item.goods}}</strong><small class="price">{{item.price}}</small></span>
+	</li>
+</ul> 

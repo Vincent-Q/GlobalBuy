@@ -3,24 +3,32 @@
 		'ngRoute',
 		'loginMdl',
 		'packageMdl',
-		'ngAnimate'
+		'ngAnimate',
+		'ui.router'
 	]);
+	
+	globalBuyApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+		$urlRouterProvider.otherwise('/login');
 
-	globalBuyApp.config(['$routeProvider', function($routeProvider){
-		$routeProvider.when('/login', {
-			templateUrl: 'page/login.html',
-			controller: 'LoginController'
-		});
-
-		$routeProvider.when('/packageList', {
-			templateUrl: 'page/packageList.html',
-			controller: 'PackageListController'
-		});
-
-		$routeProvider.when('/packageListNew', {
-			templateUrl: 'page/packageListNew.html',
-			controller: 'PackageListController'
-		});
+		$stateProvider
+			.state('login', {
+				url: '/login',
+				templateUrl: 'page/login.html',
+				controller: 'LoginController'
+			})
+			.state('packageList', {
+				templateUrl: 'page/packageListLayout.html'
+			})
+			.state('packageList.myPackages', {
+				url: '/myPackages',
+				templateUrl: 'page/packageList.html',
+				controller: 'PackageListController'
+			})
+			.state('packageList.search', {
+				url: '/search',
+				templateUrl: 'page/packageListNew.html',
+				controller: 'PackageListController'
+			});
 	}]);
 
 	globalBuyApp.directive('useClass', [function(){

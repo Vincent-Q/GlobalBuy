@@ -1,13 +1,13 @@
 (function(){
 	var mdl = angular.module('loginMdl', []);
 	
-	mdl.controller('LoginController',['$location', function($location){
+	mdl.controller('LoginController',['$state', function($state){
 		this.userName = '';
 		this.pwd = '';
 		this.isStored = false;
 
 		this.login = function(){
-			$location.url('packageList');
+			$state.go('packageList.myPackages');
 		};
 
 		this.select = function(){

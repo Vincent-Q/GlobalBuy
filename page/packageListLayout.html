@@ -1,0 +1,27 @@
+<div id="packageListNew" class="container" ng-app="packageMdl" ng-controller="PackageListController as pkgListCtrl">
+	<div class="row head">
+		<div class="col-xs-6 col-xs-offset-3">
+			<div class="title">
+				<img src="img/Global_title_white.png">
+				<img src="img/Earth_title.png">
+				<img src="img/Buy_title_white.png">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 sectionTitle">
+			<ul class="nav nav-tabs">
+				<li role="presentation" use-class="active: pkgListCtrl.activeTab === 'My Packages'">
+					<a ui-sref="packageList.myPackages" ng-click="pkgListCtrl.click('My Packages')">My Packages</a>
+				</li>
+				<li role="presentation" use-class="active: pkgListCtrl.activeTab === 'Search'">
+					<a ui-sref="packageList.search" ng-click="pkgListCtrl.click('Search')">Search</a>
+				</li>
+			</ul>
+			<div class="cursor" use-class="search: pkgListCtrl.activeTab === 'Search'"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12" ui-view></div>
+	</div>
+</div>
