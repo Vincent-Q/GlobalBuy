@@ -1,13 +1,13 @@
 (function(){
 	var mdl = angular.module('loginMdl', []);
 	
-	mdl.controller('LoginController', function(){
+	mdl.controller('LoginController',['$location', function($location){
 		this.userName = '';
 		this.pwd = '';
 		this.isStored = false;
 
 		this.login = function(){
-			alert('user name: ' + this.userName + '; pwd: ' + this.pwd);
+			$location.url('packageList');
 		};
 
 		this.select = function(){
@@ -17,5 +17,5 @@
 				this.isStored = true;
 			}
 		};
-	});
+	}]);
 })();

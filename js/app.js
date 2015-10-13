@@ -2,7 +2,8 @@
 	var globalBuyApp = angular.module('globalBuyApp', [
 		'ngRoute',
 		'loginMdl',
-		'packageMdl'
+		'packageMdl',
+		'ngAnimate'
 	]);
 
 	globalBuyApp.config(['$routeProvider', function($routeProvider){
@@ -13,6 +14,11 @@
 
 		$routeProvider.when('/packageList', {
 			templateUrl: 'page/packageList.html',
+			controller: 'PackageListController'
+		});
+
+		$routeProvider.when('/packageListNew', {
+			templateUrl: 'page/packageListNew.html',
 			controller: 'PackageListController'
 		});
 	}]);

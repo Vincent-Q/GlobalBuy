@@ -1,6 +1,13 @@
 (function(){
 	var mdl = angular.module('packageMdl', []);
 
+	mdl.config(['$routeProvider', function($routeProvider){
+		$routeProvider.when('/packageList/search', {
+			templateUrl: 'page/Search.html',
+			controller: 'PackageListController'
+		});
+	}]);
+
 	mdl.controller('PackageListController', function(){
 		this.activeTab = "My Packages";
 
