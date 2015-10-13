@@ -11,14 +11,14 @@
 	<div class="row">
 		<div class="col-xs-12 sectionTitle">
 			<ul class="nav nav-tabs">
-				<li role="presentation" use-class="active: pkgListCtrl.activeTab === 'My Packages'">
-					<a ui-sref="packageList.myPackages" ng-click="pkgListCtrl.click('My Packages')">My Packages</a>
+				<li role="presentation" use-class="active: pkgListCtrl.isMyPackagesActive()">
+					<a ui-sref="packageList.myPackages" ng-click="pkgListCtrl.selectMyPackages()">My Packages</a>
 				</li>
-				<li role="presentation" use-class="active: pkgListCtrl.activeTab === 'Search'">
-					<a ui-sref="packageList.search" ng-click="pkgListCtrl.click('Search')">Search</a>
+				<li role="presentation" use-class="active: pkgListCtrl.isSearchActive()">
+					<a ui-sref="packageList.search" ng-click="pkgListCtrl.selectSearch()">Search</a>
 				</li>
 			</ul>
-			<div class="cursor" use-class="search: pkgListCtrl.activeTab === 'Search'"></div>
+			<div class="cursor" use-class="search: pkgListCtrl.isSearchActive()"></div>
 		</div>
 	</div>
 	<div class="row">

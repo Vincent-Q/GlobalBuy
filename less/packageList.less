@@ -58,22 +58,20 @@
 		margin-top: -24px;
 	}
 
+	[ui-view].ng-enter, [ui-view].ng-leave{
+		transition: transform linear 0.5s;
+	}
+
+	[ui-view].ng-enter, [ui-view].ng-leave.ng-leave-active{
+		transform: translateX(1280px);
+	}
+
+	[ui-view].ng-leave, [ui-view].ng-enter.ng-enter-active{
+		transform: translateX(0px);
+	}
+
 	.list-group-item{
 		font-size: 40px;
-
-		&.ng-enter, &.ng-leave{
-			transition: all linear 1s;
-		}
-
-		&.ng-enter, &.ng-leave.ng-leave-active{	
-			opacity: 0;
-			transform: translateX(300px);
-		}
-
-		&.ng-leave, &.ng-enter.ng-enter-active{
-			opacity: 1;
-			transform: translateX(600px);
-		}
 
 		small, strong{
 			padding-left: 32px;

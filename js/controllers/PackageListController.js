@@ -8,8 +8,8 @@
 		});
 	}]);
 
-	mdl.controller('PackageListController', function(){
-		this.activeTab = "My Packages";
+	mdl.controller('PackageListController', ['$state', function($state){
+		this.__activeTab = $state.$current.name;
 
 		this.packageList = [{
 			'status': 'preparing',
@@ -38,8 +38,20 @@
 			'price': '$33.5'
 		}];
 
-		this.click = function(activeTab){
-			this.activeTab = activeTab;
+		this.selectMyPackages = function(){
+			this.__activeTab = 'packageList.myPackages';
 		};
-	});
+
+		this.selectSearch = function(){
+			this.__activeTab = 'packageList.search';
+		};
+
+		this.isMyPackagesActive = function(){
+			return this.__activeTab === 'packageList.myPackages';
+		};
+
+		this.isSearchActive = function(){
+			return this.__activeTab === 'packageList.search';
+		};
+	}]);
 })();
