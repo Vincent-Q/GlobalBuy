@@ -28,6 +28,11 @@
 				url: '/search',
 				templateUrl: 'page/packageListNew.html',
 				controller: 'PackageListController'
+			})
+			.state('packageDetail', {
+				url: '/packageDetail/:id',
+				templateUrl: 'page/packageDetail.html',
+				controller: 'PackageDetailController'
 			});
 	}]);
 

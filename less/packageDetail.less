@@ -1,0 +1,52 @@
+@import "variables.less";
+@import "less/variables.less";
+
+#packageDetail{
+	.head{
+		background-image: url('../img/Head.png');
+		min-height: 180px;
+
+		.title{
+			padding: 39px 0;
+
+			color: #ebebeb;
+			text-align: center;
+			font-size: @font-size-h4;
+		}
+	}
+
+	.previewItem{
+		border: solid 2px @gray-light;
+		border-radius: 10px;
+		width: 56px;
+		margin-bottom: 20px;
+		padding: 8px;
+
+		img{
+			width: 38px;
+			height: 50px;
+		}
+
+		&:after{
+			content:'';
+			left: 0;
+			top: 0;
+			height: 66px;
+			width: 52px;
+			display: inline-block;
+			position:absolute;
+			background-color: #ebebeb;
+			border-radius: 8px;
+			opacity: 0.3;
+		}
+
+		&.active{
+			border-color: @brand-primary;
+			background-color: none;
+
+			&:after{
+				display: none;
+			}
+		}
+	}
+}

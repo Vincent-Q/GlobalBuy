@@ -1,0 +1,20 @@
+<div id="packageDetail" class="container" ng-app="packageMdl" ng-controller="PackageDetailController">
+	<div class="row head">
+		<div class="col-xs-6 col-xs-offset-3">
+			<div class="title">
+				<span>Package Detail</span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-2">
+			<ul id="pckPreviewList" class="list-group">
+				<li class="list-group-item previewItem" ng-repeat="preview in previewList">
+					<img ng-src="{{preview.src}}">
+				</li>
+			</ul>
+		</div>
+		<div class="col-xs-4"></div>
+		<div class="col-xs-6"></div>
+	</div>
+</div>
