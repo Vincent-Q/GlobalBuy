@@ -15,12 +15,19 @@
 		}
 	}
 
+	#pckPreviewList{
+		max-height: 250px;
+		overflow: hidden;
+	}
+
 	.previewItem{
 		border: solid 2px @gray-light;
 		border-radius: 10px;
 		width: 56px;
 		margin-bottom: 20px;
 		padding: 8px;
+
+		transition: transform linear 0.5s;
 
 		img{
 			width: 38px;
@@ -42,11 +49,45 @@
 
 		&.active{
 			border-color: @brand-primary;
-			background-color: none;
+			background-color: transparent;
 
 			&:after{
 				display: none;
 			}
+		}
+
+		&.pos_0{
+			transform: translateY(0);
+		}
+
+		&.pos_1{
+			transform: translateY(-90px);
+		}
+
+		&.pos_2{
+			transform: translateY(-180px);
+		}
+
+		&.pos_3{
+			transform: translateY(-270px);
+		}
+
+		&.pos_4{
+			transform: translateY(-360px);
+		}
+	}
+
+	.arrow{
+		width: 56px;
+		height: 38px;
+		margin-bottom: 20px;
+
+		&.up{
+			background-image: url('../img/up_arrow_56X38.png');
+		}
+
+		&.down{
+			background-image: url('../img/down_arrow_56X38.png');
 		}
 	}
 }
