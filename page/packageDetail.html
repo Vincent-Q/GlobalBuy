@@ -8,15 +8,10 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-2">
-			<div class="arrow up" ng-show="isArrowShown()" ng-click="previous()"></div>
-			<ul id="pckPreviewList" class="list-group">
-				<li class="list-group-item previewItem" ng-repeat="preview in previewList" use-class="active: isActive($index)" ng-class="getPosClass()">
-					<img ng-src="{{preview.src}}">
-				</li>
-			</ul>
-			<div class="arrow down" ng-show="isArrowShown()" ng-click="next()"></div>
+			<gb-scrolling-list gb-init="listOption"></gb-scrolling-list>
 		</div>
-		<div class="col-xs-4"></div>
+		<div class="col-xs-4">
+		</div>
 		<div class="col-xs-6"></div>
 	</div>
 </div>

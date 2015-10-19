@@ -1,0 +1,96 @@
+describe('Test behavious of gbScrollingListSpec.js', function(){
+	beforeEach(module('globalBuyApp'));
+
+	var $compile,
+		$rootScope;
+
+	beforeEach(inject(function(_$compile_, _$rootScope_){
+		$compile = _$compile_;
+		$rootScope = _$rootScope_;
+	}));
+
+	describe('Scenario1: data list is larger than window size', function(){
+		var element;
+
+		beforeEach(function(){
+			$rootScope.listOption = {
+				dataList: [{
+					src: 'stub/images/preview/lush.jpg',
+				}, {
+					src: 'stub/images/preview/aptamil.jpg'
+				}, {
+					src: 'stub/images/preview/lamy.jpg'
+				}, {
+					src: 'stub/images/preview/sausage.jpg'
+				}, {
+					src: 'stub/images/preview/choclate.jpg'
+				}],
+				windowSize: 3,
+				focusPos: 1,
+				isCircular: true
+			};
+
+			element = $compile('<gb-scrolling-list gb-init="listOption"></gb-scrolling-list>')($rootScope);
+
+			$rootScope.$digest();
+		});
+
+		it('gbScrollingList -> initialize', function(){
+			expect(element.find('li').length).toEqual(3);
+			expect(element.find('li')[1].className).toContain('active');
+		});
+
+		it('gbScrollingList -> next()', function(){
+			expect(element.find('.arrow.down')[0].className).not.toContain('ng-show');
+
+			var downArrow$ = element.find('.arrow.down')[0];
+			downArrow$.click();
+
+			expect(element.find('li')[1].className).toContain('active');
+
+			expect(element.find('li > img')[0].src).toContain('stub/images/preview/aptamil.jpg');
+			expect(element.find('li > img')[1].src).toContain('stub/images/preview/lamy.jpg');
+			expect(element.find('li > img')[2].src).toContain('stub/images/preview/sausage.jpg');
+		});
+
+		it('gbScrollingList -> previous()', function(){
+			expect(element.find('.arrow.up')[0].className).not.toContain('ng-show');
+
+			var upArrow$ = element.find('.arrow.up')[0];
+			upArrow$.click();
+
+			expect(element.find('li')[1].className).toContain('active');
+
+			expect(element.find('li > img')[0].src).toContain('stub/images/preview/choclate.jpg');
+			expect(element.find('li > img')[1].src).toContain('stub/images/preview/lush.jpg');
+			expect(element.find('li > img')[2].src).toContain('stub/images/preview/aptamil.jpg');
+		});
+	});
+
+	describe('Scenario2: data list is smaller than or same as window size', function(){
+		it('gbScrollingList -> initialize', function(){
+			$rootScope.listOption = {
+				dataList: [{
+					src: 'stub/images/preview/lush.jpg',
+				}, {
+					src: 'stub/images/preview/aptamil.jpg'
+				}, {
+					src: 'stub/images/preview/lamy.jpg'
+				}],
+				windowSize: 3,
+				focusPos: 1,
+				isCircular: true
+			};
+
+			var element = $compile('<gb-scrolling-list gb-init="listOption"></gb-scrolling-list>')($rootScope);
+
+			$rootScope.$digest();
+
+			expect(element.find('.arrow.up')[0].className).toContain('ng-hide');
+			expect(element.find('.arrow.down')[0].className).toContain('ng-hide');
+
+			expect(element.find('li').length).toEqual(3);
+			expect(element.find('li')[1].className).toContain('active');
+		});
+	});
+});

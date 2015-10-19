@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="globalBuyApp">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Test SiBM</title>
+
+	<link rel="shortcut icon" type="image/png" href="lib/jasmine-2.3.4/jasmine_favicon.png">
+  	<link rel="stylesheet" href="lib/jasmine-2.3.4/jasmine.css">
+
+  	<script src="lib/jasmine-2.3.4/jasmine.js"></script>
+  	<script src="lib/jasmine-2.3.4/jasmine-html.js"></script>
+  	<script src="lib/jasmine-2.3.4/boot.js"></script>
+
+	<!-- load css files -->
+	<link rel="stylesheet/less" type="text/css" href="../less/less/bootstrap.less">
+	<link rel="stylesheet/less" type="text/css" href="../less/grid.less">
+	<link rel="stylesheet/less" type="text/css" href="../less/forms.less">
+	<link rel="stylesheet/less" type="text/css" href="../less/buttons.less">
+	<link rel="stylesheet/less" type="text/css" href="../less/list-group.less">
+	<link rel="stylesheet/less" type="text/css" href="../less/navs.less">
+
+	<link rel="stylesheet/less" type="text/css" href="../less/login.less">
+	<link rel="stylesheet/less" type="text/css" href="../less/packageList.less">
+	<link rel="stylesheet/less" type="text/css" href="../less/packageListNew.less">
+	<link rel="stylesheet/less" type="text/css" href="../less/packageDetail.less">
+	<!-- load js files -->
+	<script type="text/javascript" src="../lib/jquery.min.js"></script>
+	<script type="text/javascript" src="../lib/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../lib/angular.min.js"></script>
+	<script type="text/javascript" src="../lib/angular-route.min.js"></script>
+	<script type="text/javascript" src="../lib/angular-animate.min.js"></script>
+	<script type="text/javascript" src="../lib/angular-ui-router.min.js"></script>
+	<script type="text/javascript" src="lib/angular-mocks.js"></script>
+
+	<script type="text/javascript" src="../js/app.js"></script>
+	
+	<script type="text/javascript" src="../js/directives/attrDirectives/useClass.js"></script>
+	<script type="text/javascript" src="../js/directives/elemDirectives/gbScrollingList.js"></script>
+
+	<script type="text/javascript" src="../js/controllers/LoginController.js"></script>
+	<script type="text/javascript" src="../js/controllers/PackageListController.js"></script>
+	<script type="text/javascript" src="../js/controllers/PackageDetailController.js"></script>
+
+	<!-- load spec files -->
+	<script type="text/javascript" src="directives/gbScrollingListSpec.js"></script>
+
+	<script>
+	  less = {
+	    env: "development",
+	    async: false,
+	    fileAsync: false,
+	    poll: 1000,
+	    functions: {},
+	    dumpLineNumbers: "comments",
+	    relativeUrls: false,
+	    rootpath: ""
+	  };
+	</script>
+	<script type="text/javascript" src="../lib/less.min.js"></script>
+</head>
+<body onselectstart="return false">
+</body>
+</html>
