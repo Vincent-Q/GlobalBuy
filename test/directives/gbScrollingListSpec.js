@@ -13,6 +13,9 @@ describe('Test behavious of gbScrollingListSpec.js', function(){
 		var element;
 
 		beforeEach(function(){
+			$rootScope.selectedData = null;
+			$rootScope.lastData = null;
+
 			$rootScope.listOption = {
 				dataList: [{
 					src: 'stub/images/preview/lush.jpg',
@@ -27,7 +30,12 @@ describe('Test behavious of gbScrollingListSpec.js', function(){
 				}],
 				windowSize: 3,
 				focusPos: 1,
-				isCircular: true
+				onFocus: function(data){
+					$rootScope.selectedData = data;
+				},
+				onBlur: function(data){
+					$rootScope.lastData = data;
+				}
 			};
 
 			element = $compile('<gb-scrolling-list gb-init="listOption"></gb-scrolling-list>')($rootScope);
@@ -38,6 +46,8 @@ describe('Test behavious of gbScrollingListSpec.js', function(){
 		it('gbScrollingList -> initialize', function(){
 			expect(element.find('li').length).toEqual(3);
 			expect(element.find('li')[1].className).toContain('active');
+
+			expect($rootScope.selectedData.src).toContain('stub/images/preview/aptamil.jpg');
 		});
 
 		it('gbScrollingList -> next()', function(){
@@ -45,6 +55,9 @@ describe('Test behavious of gbScrollingListSpec.js', function(){
 
 			var downArrow$ = element.find('.arrow.down')[0];
 			downArrow$.click();
+
+			expect($rootScope.lastData.src).toContain('stub/images/preview/aptamil.jpg');
+			expect($rootScope.selectedData.src).toContain('stub/images/preview/lamy.jpg');
 
 			expect(element.find('li')[1].className).toContain('active');
 
@@ -58,6 +71,9 @@ describe('Test behavious of gbScrollingListSpec.js', function(){
 
 			var upArrow$ = element.find('.arrow.up')[0];
 			upArrow$.click();
+
+			expect($rootScope.lastData.src).toContain('stub/images/preview/aptamil.jpg');
+			expect($rootScope.selectedData.src).toContain('stub/images/preview/lush.jpg');
 
 			expect(element.find('li')[1].className).toContain('active');
 

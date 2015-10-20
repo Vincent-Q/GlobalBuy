@@ -3,11 +3,16 @@
 
 	globalBuyApp.directive('gbScrollingList', [function(){
 
-		function ScrollingList(dataList, windowSize, selectedIndex, focusPos){
-			this.__dataList = dataList;
-			this.__windowSize = windowSize || 3;
-			this.__selectedIndex = selectedIndex || 0;
-			this.__focusPos = focusPos || 1;
+		function ScrollingList(option){
+			this.__dataList = option.dataList;
+			this.__windowSize = option.windowSize || 3;
+			this.__selectedIndex = this.__validateIndex(option.focusPos || 0);
+			this.__focusPos = option.focusPos || 1;
+
+			this.__focusCb = option.onFocus || $.noop;
+			this.__blurCb = option.onBlur || $.noop;
+
+			this.__focusCb(this.__dataList[this.__selectedIndex]);
 
 			this.__isCircular = true;
 		}
@@ -15,11 +20,19 @@
 		var proto = ScrollingList.prototype;
 
 		proto.previous = function(){
+			this.__blurCb(this.__dataList[this.__selectedIndex]);
+
 			this.__selectedIndex = this.__validateIndex(this.__selectedIndex - 1);
+		
+			this.__focusCb(this.__dataList[this.__selectedIndex]);
 		};
 
 		proto.next = function(){
+			this.__blurCb(this.__dataList[this.__selectedIndex]);
+
 			this.__selectedIndex = this.__validateIndex(this.__selectedIndex + 1);
+		
+			this.__focusCb(this.__dataList[this.__selectedIndex]);
 		};
 
 		proto.getVisibleItems = function(){
@@ -46,7 +59,7 @@
 		
 		function link(scope, element, attrs){
 			var option = scope.option;
-			var scrollingList = new ScrollingList(option.dataList, option.windowSize, option.focusPos);
+			var scrollingList = new ScrollingList(option);
 
 			option.list = scrollingList.getVisibleItems();
 
