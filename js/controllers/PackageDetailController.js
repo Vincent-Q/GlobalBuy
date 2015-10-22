@@ -5,27 +5,35 @@
 		$scope.listOption = {
 			dataList: [{
 					previewUrl: 'stub/images/preview/lush.jpg',
-					src: 'stub/images/preview/lush.jpg'
+					sourceUrl: 'stub/images/preview/lush.jpg'
 				}, {
 					previewUrl: 'stub/images/preview/aptamil.jpg',
-					src: 'stub/images/source/aptamil.jpg'
+					sourceUrl: 'stub/images/source/aptamil.jpg',
+					product: {
+						name: 'Aptamil Kindermilch 2+',
+						price: 14.49,
+						quantity: 8,
+						totalPrice: 115.92,
+					}
 				}, {
 					previewUrl: 'stub/images/preview/lamy.jpg',
-					src: 'stub/images/preview/lamy.jpg'
+					sourceUrl: 'stub/images/preview/lamy.jpg'
 				}, {
 					previewUrl: 'stub/images/preview/sausage.jpg',
-					src: 'stub/images/preview/sausage.jpg'
+					sourceUrl: 'stub/images/preview/sausage.jpg'
 				}, {
 					previewUrl: 'stub/images/preview/choclate.jpg',
-					src: 'stub/images/preview/choclate.jpg'
+					sourceUrl: 'stub/images/preview/choclate.jpg'
 				}],
 			windowSize: 3,
 			focusPos: 1,
 			onFocus: function(data){
-				$scope.selectedData = data;
+				$scope.product = data.product;
+				$scope.sourceUrl = data.sourceUrl;
 			}
 		};
 
-		$scope.selectedData = $scope.listOption.dataList[1];
+		$scope.sourceUrl = $scope.listOption.dataList[1].sourceUrl;
+		$scope.product = $scope.listOption.dataList[1].product;
 	}]);
 })();
