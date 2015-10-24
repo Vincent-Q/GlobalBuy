@@ -18,15 +18,25 @@ describe('Test behavious of gbScrollingListSpec.js', function(){
 
 			$rootScope.listOption = {
 				dataList: [{
-					previewUrl: 'stub/images/preview/lush.jpg',
+					product: {
+						previewUrl: 'stub/images/preview/lush.jpg',
+					}
 				}, {
-					previewUrl: 'stub/images/preview/aptamil.jpg'
+					product: {
+						previewUrl: 'stub/images/preview/aptamil.jpg'
+					}
 				}, {
-					previewUrl: 'stub/images/preview/lamy.jpg'
+					product: {
+						previewUrl: 'stub/images/preview/lamy.jpg'
+					}
 				}, {
-					previewUrl: 'stub/images/preview/sausage.jpg'
+					product: {
+						previewUrl: 'stub/images/preview/sausage.jpg'
+					}
 				}, {
-					previewUrl: 'stub/images/preview/choclate.jpg'
+					product: {
+						previewUrl: 'stub/images/preview/choclate.jpg'
+					}
 				}],
 				windowSize: 3,
 				focusPos: 1,
@@ -47,7 +57,7 @@ describe('Test behavious of gbScrollingListSpec.js', function(){
 			expect(element.find('li').length).toEqual(3);
 			expect(element.find('li')[1].className).toContain('active');
 
-			expect($rootScope.selectedData.previewUrl).toContain('stub/images/preview/aptamil.jpg');
+			expect($rootScope.selectedData.product.previewUrl).toContain('stub/images/preview/aptamil.jpg');
 		});
 
 		it('gbScrollingList -> next()', function(){
@@ -56,8 +66,8 @@ describe('Test behavious of gbScrollingListSpec.js', function(){
 			var downArrow$ = element.find('.arrow.down')[0];
 			downArrow$.click();
 
-			expect($rootScope.lastData.previewUrl).toContain('stub/images/preview/aptamil.jpg');
-			expect($rootScope.selectedData.previewUrl).toContain('stub/images/preview/lamy.jpg');
+			expect($rootScope.lastData.product.previewUrl).toContain('stub/images/preview/aptamil.jpg');
+			expect($rootScope.selectedData.product.previewUrl).toContain('stub/images/preview/lamy.jpg');
 
 			expect(element.find('li')[1].className).toContain('active');
 
@@ -72,8 +82,8 @@ describe('Test behavious of gbScrollingListSpec.js', function(){
 			var upArrow$ = element.find('.arrow.up')[0];
 			upArrow$.click();
 
-			expect($rootScope.lastData.previewUrl).toContain('stub/images/preview/aptamil.jpg');
-			expect($rootScope.selectedData.previewUrl).toContain('stub/images/preview/lush.jpg');
+			expect($rootScope.lastData.product.previewUrl).toContain('stub/images/preview/aptamil.jpg');
+			expect($rootScope.selectedData.product.previewUrl).toContain('stub/images/preview/lush.jpg');
 
 			expect(element.find('li')[1].className).toContain('active');
 
@@ -87,11 +97,17 @@ describe('Test behavious of gbScrollingListSpec.js', function(){
 		it('gbScrollingList -> initialize', function(){
 			$rootScope.listOption = {
 				dataList: [{
-					previewUrl: 'stub/images/preview/lush.jpg',
+					product: {
+						previewUrl: 'stub/images/preview/lush.jpg',
+					}
 				}, {
-					previewUrl: 'stub/images/preview/aptamil.jpg'
+					product: {
+						previewUrl: 'stub/images/preview/aptamil.jpg'
+					}
 				}, {
-					previewUrl: 'stub/images/preview/lamy.jpg'
+					product: {
+						previewUrl: 'stub/images/preview/lamy.jpg'
+					}
 				}],
 				windowSize: 3,
 				focusPos: 1,

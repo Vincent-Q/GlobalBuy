@@ -92,7 +92,7 @@
 			template:	'<div class="arrow up" ng-show="option.isArrowShown()" ng-click="option.previous()"></div>' +
 							'<ul id="pckPreviewList" class="list-group">' +
 								'<li class="list-group-item previewItem" ng-repeat="preview in option.list" use-class="active: option.isActive($index)">' +
-									'<img ng-src="{{preview.previewUrl}}">' +
+									'<img ng-src="{{preview.product.previewUrl}}">' +
 								'</li>' +
 							'</ul>' +
 						'<div class="arrow down" ng-show="option.isArrowShown()" ng-click="option.next()"></div>',

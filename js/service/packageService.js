@@ -5,55 +5,75 @@
 		var getPackageById = function(id){
 			return {
 				'itemList':[{
-					previewUrl: 'stub/images/preview/lush.jpg',
-					sourceUrl: 'stub/images/source/lush.jpg',
+					id: '001',
 					product:{
+						id:'p01',
 						name: 'Lush New Soap',
-						price: 7.9,
-						quantity: 2,
-						totalPrice: 19.8,
-						unit:'euro'
-					}
+						price: {
+							value: 7.9,
+							unit:'euro'
+						},
+						previewUrl: 'stub/images/preview/lush.jpg',
+						sourceUrl: 'stub/images/source/lush.jpg'
+					},
+					quantity: 2,
+					totalPrice: 19.8
 				}, {
-					previewUrl: 'stub/images/preview/aptamil.jpg',
-					sourceUrl: 'stub/images/source/aptamil.jpg',
+					id: '002',
 					product:{
+						id: 'p02',
 						name: 'Aptamil Kindermilch 2+',
-						price: 14.49,
-						quantity: 8,
-						totalPrice: 115.92,
-						unit:'euro'
-					}
+						price: {
+							value: 14.49,
+							unit: 'euro'
+						},
+						previewUrl: 'stub/images/preview/aptamil.jpg',
+						sourceUrl: 'stub/images/source/aptamil.jpg'
+					},
+					quantity: 8,
+					totalPrice: 115.92
 				}, {
-					previewUrl: 'stub/images/preview/lamy.jpg',
-					sourceUrl: 'stub/images/source/lamy.jpg',
+					id: '003',
 					product:{
+						id:'p03',
 						name: 'Lamy Pen',
-						price: 18.9,
-						quantity: 2,
-						totalPrice: 39.8,
-						unit: 'euro'
-					}
+						price: {
+							value: 18.9,
+							unit: 'euro'
+						},
+						previewUrl: 'stub/images/preview/lamy.jpg',
+						sourceUrl: 'stub/images/source/lamy.jpg'
+					},
+					quantity: 2,
+					totalPrice: 39.8,
 				}, {
-					previewUrl: 'stub/images/preview/sausage.jpg',
-					sourceUrl: 'stub/images/source/sausage.jpg',
+					id: '004',
 					product: {
+						id: 'p04',
 						name: 'German Sausage',
-						price: 2,
-						quantity: 2,
-						totalPrice: 4,
-						unit: 'euro'
-					}
+						price: {
+							value: 2,
+							unit: 'euro'
+						},
+						previewUrl: 'stub/images/preview/sausage.jpg',
+						sourceUrl: 'stub/images/source/sausage.jpg'
+					},
+					quantity: 2,
+					totalPrice: 4,
 				}, {
-					previewUrl: 'stub/images/preview/choclate.jpg',
-					sourceUrl: 'stub/images/source/choclate.jpg',
+					id: '004',
 					product: {
+						id: 'p05',
 						name: 'Lindt Choclate',
-						price: 1.8,
-						quantity: 5,
-						totalPrice: 9,
-						unit: 'euro'
-					}
+						price: {
+							value: 1.8,
+							unit: 'euro'
+						},
+						previewUrl: 'stub/images/preview/choclate.jpg',
+						sourceUrl: 'stub/images/source/choclate.jpg'
+					},
+					quantity: 5,
+					totalPrice: 9
 				}]
 			};
 		};

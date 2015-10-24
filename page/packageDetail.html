@@ -12,16 +12,16 @@
 		</div>
 		<div class="col-xs-4">
 			<div class="source">
-				<img ng-src="{{sourceUrl}}" />
+				<img ng-src="{{selectedItem.product.sourceUrl}}" />
 			</div>
 		</div>
 		<div class="col-xs-6">
 			<div class="introduction">
-				<h3>{{product.name}}</h3>
-				<label>Price:</label><span><strong>{{product.price | currency:product.unit}}</strong></span>
-				<label>Quantity:</label><span><strong>{{product.quantity}}</strong></span>
-				<label>Total:</label><span><strong>{{product.totalPrice | currency:product.unit}}</strong></span>
-				<input class="btn btn-xs btn-info" type="button" value="{{product.unit}}">
+				<h3>{{selectedItem.product.name}}</h3>
+				<label>Price:</label><span><strong>{{selectedItem.product.price.value | currency:selectedItem.product.price.unit}}</strong></span>
+				<label>Quantity:</label><span><strong>{{selectedItem.quantity}}</strong></span>
+				<label>Total:</label><span><strong>{{selectedItem.totalPrice | currency:selectedItem.product.price.unit}}</strong></span>
+				<input class="btn btn-xs btn-info" type="button" value="{{selectedItem.product.price.unit}}">
 				<p>As experts in infant milk, Aptamil has successfully fed millions of babies worldwide. With over 30 years of pioneering research, our passionate team of over 250 paediatricians, nutritionists and scientists, continue to take inspiration from the benefits of nature, to develop unique formulas, tailored to support your baby’s nutritional needs at every stage of development.</p>
 			</div>
 		</div>
