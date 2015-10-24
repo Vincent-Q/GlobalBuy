@@ -1,5 +1,5 @@
 (function(){
-	var productMdl = angular.module('productModule', []);
+	var productMdl = angular.module('productModule');
 
 	productMdl.factory('Product', function(){
 		function Product(json){
