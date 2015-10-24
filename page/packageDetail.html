@@ -18,10 +18,10 @@
 		<div class="col-xs-6">
 			<div class="introduction">
 				<h3>{{product.name}}</h3>
-				<label>Price:</label><span><strong>{{product.price}}&nbsp;€</strong></span>
+				<label>Price:</label><span><strong>{{product.price | currency:product.unit}}</strong></span>
 				<label>Quantity:</label><span><strong>{{product.quantity}}</strong></span>
-				<label>Total:</label><span><strong>{{product.totalPrice}}&nbsp;€</strong></span>
-				<input class="btn btn-xs btn-info" type="button" value="Euro">
+				<label>Total:</label><span><strong>{{product.totalPrice | currency:product.unit}}</strong></span>
+				<input class="btn btn-xs btn-info" type="button" value="{{product.unit}}">
 				<p>As experts in infant milk, Aptamil has successfully fed millions of babies worldwide. With over 30 years of pioneering research, our passionate team of over 250 paediatricians, nutritionists and scientists, continue to take inspiration from the benefits of nature, to develop unique formulas, tailored to support your baby’s nutritional needs at every stage of development.</p>
 			</div>
 		</div>
