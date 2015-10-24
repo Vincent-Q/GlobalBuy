@@ -1,7 +1,7 @@
 (function(){
-	var globalBuyApp = angular.module('globalBuyApp');
+	var packageModule = angular.module('packageModule', []);
 
-	globalBuyApp.factory('packageService', function(){
+	packageModule.factory('packageService', function(){
 		var getPackageById = function(id){
 			return {
 				'itemList':[{

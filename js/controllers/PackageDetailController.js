@@ -1,5 +1,5 @@
 (function(){
-	var packageMdl = angular.module('packageMdl');
+	var packageMdl = angular.module('packageMdl', ['packageModule']);
 
 	packageMdl.controller('PackageDetailController', ['$scope', 'packageService', function($scope, packageService){
 		var package = packageService.getPackageById(1);
