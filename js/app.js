@@ -2,7 +2,7 @@
 	var globalBuyApp = angular.module('globalBuyApp', [
 		'ngRoute',
 		'loginMdl',
-		'packageMdl',
+		'packageApp',
 		'ngAnimate',
 		'ui.router'
 	]);

@@ -1,5 +1,5 @@
 (function(){
-	var mdl = angular.module('packageMdl', []);
+	var mdl = angular.module('packageApp');
 
 	mdl.config(['$routeProvider', function($routeProvider){
 		$routeProvider.when('/packageList/search', {
