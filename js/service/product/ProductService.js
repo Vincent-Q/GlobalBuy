@@ -2,9 +2,7 @@
 	var productMdl = angular.module('productModule');
 
 	productMdl.factory('productService', ['productDataProvider', 'Product', function(productDataProvider, Product){
-		function ProductService(){
-
-		}
+		function ProductService(){}
 
 		var proto = ProductService.prototype;
 
@@ -16,9 +14,7 @@
 		};
 
 		proto.getPrice = function(productId, unit){
-			var productData = productDataProvider.getProductDataById(productId);
-			var product = new Product(productData);
-
+			var product = this.getProductById(productId);
 			return product.getPrice(unit);
 		};
 

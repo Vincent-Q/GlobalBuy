@@ -24,7 +24,7 @@
 				unit: unit
 			};
 
-			$scope.totalPrice = packageService.calculateProductTotalPrice(pckId, productId, unit);
+			$scope.selectedItem.totalPrice = packageService.calculateProductTotalPrice(pckId, productId, unit);
 		};
 	}]);
 })();
