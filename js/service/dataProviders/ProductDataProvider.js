@@ -20,6 +20,13 @@
 					value: 14.49,
 					unit: 'euro'
 				},
+				priceOptions: [{
+					value: 14.49,
+					unit: 'euro'
+				}, {
+					value: 70,
+					unit: 'rmb'
+				}],
 				previewUrl: 'stub/images/preview/aptamil.jpg',
 				sourceUrl: 'stub/images/source/aptamil.jpg'
 			},

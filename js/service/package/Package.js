@@ -22,6 +22,11 @@
 			return this.__json;
 		};
 
+		proto.calculateProductTotalPrice = function(productId, unit){
+			var product = productService.getProductById(productId);
+			return this.__json.quanitity * product.getPrice(unit);
+		};
+
 		return Package;
 	}]);
 })();

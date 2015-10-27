@@ -1,3 +1,3 @@
 (function(){
-	angular.module('packageApp', ['packageModule']);
+	angular.module('packageApp', ['packageModule', 'productModule']);
 })();

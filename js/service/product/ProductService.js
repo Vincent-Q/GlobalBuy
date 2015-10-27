@@ -15,6 +15,13 @@
 			return product;
 		};
 
+		proto.getPrice = function(productId, unit){
+			var productData = productDataProvider.getProductDataById(productId);
+			var product = new Product(productData);
+
+			return product.getPrice(unit);
+		};
+
 		return new ProductService();
 	}]);
 })();
