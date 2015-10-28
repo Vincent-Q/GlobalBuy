@@ -10,6 +10,10 @@
 					value: 7.9,
 					unit:'euro'
 				},
+				priceOptions: [{
+					value: 7.9,
+					unit:'euro'
+				}],
 				previewUrl: 'stub/images/preview/lush.jpg',
 				sourceUrl: 'stub/images/source/lush.jpg'
 			},
@@ -37,6 +41,10 @@
 					value: 18.9,
 					unit: 'euro'
 				},
+				priceOptions: [{
+					value: 18.9,
+					unit: 'euro'
+				}],
 				previewUrl: 'stub/images/preview/lamy.jpg',
 				sourceUrl: 'stub/images/source/lamy.jpg'
 			},
@@ -47,6 +55,10 @@
 					value: 2,
 					unit: 'euro'
 				},
+				priceOptions: [{
+					value: 2,
+					unit: 'euro'
+				}],
 				previewUrl: 'stub/images/preview/sausage.jpg',
 				sourceUrl: 'stub/images/source/sausage.jpg'
 			},
@@ -57,6 +69,10 @@
 					value: 1.8,
 					unit: 'euro'
 				},
+				priceOptions: [{
+					value: 1.8,
+					unit: 'euro'
+				}],
 				previewUrl: 'stub/images/preview/choclate.jpg',
 				sourceUrl: 'stub/images/source/choclate.jpg'
 			}

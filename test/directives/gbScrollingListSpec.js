@@ -1,4 +1,4 @@
-describe('Test behavious of gbScrollingListSpec.js', function(){
+describe('Test behaviors of gbScrollingListSpec.js', function(){
 	beforeEach(module('globalBuyApp'));
 
 	var $compile,

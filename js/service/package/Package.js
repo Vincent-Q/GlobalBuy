@@ -1,12 +1,40 @@
 (function(){
 	var packageModule = angular.module('packageModule');
 
-	packageModule.factory('Package', ['productService', function(productService){
+	packageModule.factory('Package', ['productService', 'PackageItem', function(productService, PackageItem){
 		function Package(json){
 			this.__json = json;
+
+			this.__parseJson(json);
 		}
 
 		var proto = Package.prototype;
+
+		/******************************************************************************
+		 * ****************  Begin: do refactoring of Package   ***********************
+		 ******************************************************************************/
+
+		proto.__parseJson = function(json){
+			this.__id = json.id;
+
+			this.__itemList = [];
+			var length = json.itemList.length;
+			for(var i=0; i<length; i++){
+				this.__itemList.push(new PackageItem(json.itemList[i]));
+			}
+		};
+
+		proto.calculatePackagePrice = function(){
+
+		};
+
+		proto.calculateItemPrice = function(productId, unit){
+			
+		};
+
+		/******************************************************************************
+		 * ****************  End: do refactoring of Package   ***********************
+		 ******************************************************************************/
 
 		proto.toJson = function(){
 			var itemList = this.__json.itemList;
