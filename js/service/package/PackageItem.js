@@ -1,7 +1,7 @@
 (function(){
 	var packageModule = angular.module('packageModule');
 
-	packageModule.factory('PackageItem', ['productService', function(productService){
+	packageModule.factory('PackageItem', ['productService', 'Money', function(productService, Money){
 		function PackageItem(json){
 			this.__parseJson(json);
 		}
@@ -14,7 +14,8 @@
 		};
 
 		proto.calculateItemPrice = function(unit){
-			return 0;
+			var priceMoney = this.__product.getPriceMoney(unit);
+			return new Money(priceMoney.getValue() * this.__quantity, priceMoney.getUnit());
 		};
 
 		return PackageItem;
