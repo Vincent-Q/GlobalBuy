@@ -19,8 +19,8 @@
 		};
 
 		proto.calculateProductTotalPrice = function(pckId, productId, unit){
-			var pckObject = this.getPackageObjectById(pckId);
-			return pckObject.calculateProductTotalPrice(productId, unit);
+			var package = this.getPackageObjectById(pckId);
+			return package.calculateItemPrice(productId, unit).getValue();
 		};
 
 		return new PackageService();

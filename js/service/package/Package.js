@@ -63,11 +63,6 @@
 			return this.__json;
 		};
 
-		proto.calculateProductTotalPrice = function(productId, unit){
-			var product = productService.getProductById(productId);
-			return this.__findItem(productId).quantity * product.getPriceMoney(unit).getValue();
-		};
-
 		proto.__findItem = function(productId){
 			var length = this.__json.itemList.length;
 			
