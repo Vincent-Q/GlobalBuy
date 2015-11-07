@@ -42,6 +42,23 @@
 			return new Money(this.__value + money.getValue(), this.__unit);
 		};
 
+		/**
+		 * multiply specific multiple of this money
+		 * 
+		 * @param  {number} multiple number to be multiplied, cannot be a minus number;
+		 * 
+		 * @return {Money}  new money object
+		 *
+		 * @throws {Error} If parameter multiple is a minus number
+		 */
+		proto.multiply = function(multiple){
+			if(multiple < 0){
+				throw new Error('Money multiple cannot be a minus number.');
+			}
+
+			return new Money(this.__value * multiple, this.__unit);
+		};
+
 		return Money;
 	});
 })();
