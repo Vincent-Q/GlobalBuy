@@ -1,7 +1,7 @@
 (function(){
 	var packageModule = angular.module('packageModule');
 
-	packageModule.factory('Package', ['productService', 'PackageItem', function(productService, PackageItem){
+	packageModule.factory('Package', ['productService', 'PackageItem', 'Money', function(productService, PackageItem, Money){
 		function Package(json){
 			this.__json = json;
 
@@ -24,12 +24,25 @@
 			}
 		};
 
-		proto.calculatePackagePrice = function(){
-
+		proto.calculatePackagePrice = function(unit){
+			var totalPrice = new Money(0, unit), packageItem;
+			for(var i=0; i<this.__itemList.length; i++){
+				packageItem = this.__itemList[i];
+				totalPrice = totalPrice.add(packageItem.calculateItemPrice(unit));
+			}
+			return totalPrice;
 		};
 
 		proto.calculateItemPrice = function(productId, unit){
-			
+			var packageItem;
+			for(var i=0; i<this.__itemList.length; i++){
+				packageItem = this.__itemList[i];
+				if(packageItem.isBoundTo(productId)){
+					return packageItem.calculateItemPrice(unit);
+				}
+			}
+
+			return new Money(0);
 		};
 
 		/******************************************************************************

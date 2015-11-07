@@ -26,6 +26,10 @@
 			}
 		};
 
+		proto.getId = function(){
+			return this.__id;
+		};
+
 		/**
 		 * get price of specified currency unit, name to be changed to "getPrice"
 		 * @param  {String} unit options are 'euro', 'rmb', etc. Capital case ignorance.

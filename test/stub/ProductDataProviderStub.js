@@ -16,6 +16,23 @@
 				}],
 				previewUrl: 'stub/images/preview/lush.jpg',
 				sourceUrl: 'stub/images/source/lush.jpg'
+			},
+			'002': {
+				id: '002',
+				name: 'Aptamil Kindermilch 2+',
+				price: {
+					value: 14.49,
+					unit: 'euro'
+				},
+				priceOptions: [{
+					value: 14.49,
+					unit: 'euro'
+				}, {
+					value: 70,
+					unit: 'rmb'
+				}],
+				previewUrl: 'stub/images/preview/aptamil.jpg',
+				sourceUrl: 'stub/images/source/aptamil.jpg'
 			}
 		};
 
