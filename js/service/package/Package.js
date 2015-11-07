@@ -49,20 +49,6 @@
 		 * ****************  End: do refactoring of Package   ***********************
 		 ******************************************************************************/
 
-		proto.toJsonOld = function(){
-			var itemList = this.__json.itemList;
-			for(var i=0; i<itemList.length; i++){
-				var item = itemList[i];
-
-				if(item.productId){
-					var product = productService.getProductById(item.productId);
-					item.product = product.toJsonOld();
-				}
-			}
-
-			return this.__json;
-		};
-
 		proto.toJson = function(){
 			var json = {
 				id: this.__id,

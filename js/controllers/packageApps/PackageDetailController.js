@@ -10,21 +10,42 @@
 			focusPos: 1,
 			onFocus: function(data){
 				$scope.selectedItem = data;
+				$scope.switchCurrencyUnit($scope.selectedItem.product.priceOptions[0].unit);
 			}
 		};
 
-		$scope.selectedItem = package.itemList[1];
+		var findPrice = function(unit, isOpposite){
+			var priceOptions = $scope.selectedItem.product.priceOptions;
+			var price;
+			for(var i=0, l=priceOptions.length; i<l; i++){
+				price = priceOptions[i];
+				if(!isOpposite){
+					if(price.unit === unit){
+						return price;
+					}
+				} else {
+					if(price.unit !== unit){
+						return price;
+					}
+				}
+			}
+		};
 
 		$scope.switchCurrencyUnit = function(unit){
+			if(!unit){
+				unit = $scope.availablePrice.unit;
+			}
+
 			var pckId = $scope.selectedItem.id;
 			var productId = $scope.selectedItem.product.id;
 
-			$scope.selectedItem.product.price = {
-				value: productService.getPrice(productId, unit),
-				unit: unit
-			};
+			$scope.selectedPrice = findPrice(unit);
+			$scope.availablePrice = findPrice(unit, true);
 
-			$scope.selectedItem.totalPrice = packageService.calculateProductTotalPrice(pckId, productId, unit);
+			$scope.selectedTotalPrice = packageService.calculateProductTotalPrice('pck01', productId, unit);
 		};
+
+		$scope.selectedItem = package.itemList[1];
+		$scope.switchCurrencyUnit($scope.selectedItem.product.priceOptions[0].unit);
 	}]);
 })();

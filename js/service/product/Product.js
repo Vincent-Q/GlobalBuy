@@ -53,10 +53,6 @@
 		 * ****************  End: do refactoring of Package   ***********************
 		 ******************************************************************************/
 
-		proto.toJsonOld = function(){
-			return this.__json;
-		};
-
 		proto.toJson = function(){
 			var json = {
 				id: this.__id,

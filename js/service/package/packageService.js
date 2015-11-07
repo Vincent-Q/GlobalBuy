@@ -9,7 +9,7 @@
 		proto.getPackageById = function(pckId){
 			var pckData = pckDataProvider.getPackageDataById(pckId);
 			var pckObject = new Package(pckData);
-			return pckObject.toJsonOld();
+			return pckObject.toJson();
 		};
 
 		proto.getPackageObjectById = function(pckId){
@@ -20,7 +20,7 @@
 
 		proto.calculateProductTotalPrice = function(pckId, productId, unit){
 			var package = this.getPackageObjectById(pckId);
-			return package.calculateItemPrice(productId, unit).getValue();
+			return package.calculateItemPrice(productId, unit).toJson();
 		};
 
 		return new PackageService();
