@@ -65,7 +65,7 @@
 
 		proto.calculateProductTotalPrice = function(productId, unit){
 			var product = productService.getProductById(productId);
-			return this.__findItem(productId).quantity * product.getPrice(unit);
+			return this.__findItem(productId).quantity * product.getPriceMoney(unit).getValue();
 		};
 
 		proto.__findItem = function(productId){

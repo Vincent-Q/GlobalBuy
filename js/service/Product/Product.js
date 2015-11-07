@@ -51,26 +51,6 @@
 		 * ****************  End: do refactoring of Package   ***********************
 		 ******************************************************************************/
 
-		/**
-		 * get price of specified currency unit
-		 * @param  {String} unit options are 'euro', 'rmb', etc. Capital case ignorance.
-		 * @return {Number}      found price value, if no matched unit found, -1 will be returned.
-		 */
-		proto.getPrice = function(unit){
-			var length = this.__json.priceOptions.length;
-
-			var price;
-			for(var i=0; i<length; i++){
-				price = this.__json.priceOptions[i];
-
-				if(unit.toLowerCase() === price.unit.toLowerCase()){
-					return price.value;
-				}
-			}
-
-			return -1;
-		};
-
 		proto.toJson = function(){
 			return this.__json;
 		};

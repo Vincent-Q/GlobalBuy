@@ -15,7 +15,7 @@
 
 		proto.getPrice = function(productId, unit){
 			var product = this.getProductById(productId);
-			return product.getPrice(unit);
+			return product.getPriceMoney(unit).getValue();
 		};
 
 		return new ProductService();

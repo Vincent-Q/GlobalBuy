@@ -24,20 +24,6 @@ describe('Test behaviors of Product', function(){
 		product = new ProductClass(productData);
 	}));
 
-	describe('Test getPrice logic of Product', function(){
-		it('Normal case: specified unit price can be found', function(){
-			var priceValue = product.getPrice('euro');
-
-			expect(priceValue).toBe(10);
-		});
-
-		it('Exceptional case: specified unit price cannot be found', function(){
-			var priceValue = product.getPrice('rmb');
-
-			expect(priceValue).toBe(-1);
-		});
-	});
-
 	describe('Test new getPrice logic of Product', function(){
 		it('Normal case: specified unit price can be found', function(){
 			var price = product.getPriceMoney('euro');
