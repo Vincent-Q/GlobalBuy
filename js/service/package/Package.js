@@ -49,31 +49,33 @@
 		 * ****************  End: do refactoring of Package   ***********************
 		 ******************************************************************************/
 
-		proto.toJson = function(){
+		proto.toJsonOld = function(){
 			var itemList = this.__json.itemList;
 			for(var i=0; i<itemList.length; i++){
 				var item = itemList[i];
 
 				if(item.productId){
 					var product = productService.getProductById(item.productId);
-					item.product = product.toJson();
+					item.product = product.toJsonOld();
 				}
 			}
 
 			return this.__json;
 		};
 
-		proto.__findItem = function(productId){
-			var length = this.__json.itemList.length;
-			
-			var item;
-			for(var i=0; i<length; i++){
-				item = this.__json.itemList[i];
+		proto.toJson = function(){
+			var json = {
+				id: this.__id,
+				itemList: []
+			};
 
-				if(item.productId === productId){
-					return item;
-				}
+			var packageItem;
+			for(var i=0, l=this.__itemList.length; i<l; i++){
+				packageItem = this.__itemList[i];
+				json.itemList.push(packageItem.toJson());
 			}
+
+			return json;
 		};
 
 		return Package;

@@ -52,4 +52,35 @@ describe('Test behaviors of Package', function(){
 			expect(price.equals(new MoneyClass(63.2 + 57.96, 'euro'))).toBeTruthy();
 		});
 	});
+
+	describe('Test toJson logic of PackageSpec', function(){
+		it('Normal case: test package structure', function(){
+			var package = new PackageClass({
+				id:'pck01',
+				itemList:[{
+					productId: '001',
+					quantity: 8
+				}]
+			});
+
+			var convertedJson = package.toJson();
+
+			expect(convertedJson).toEqual({
+				id:'pck01',
+				itemList:[{
+					product: {
+						id: '001',
+						name: 'Lush New Soap',
+						priceOptions: [{
+							value: 7.9,
+							unit:'euro'
+						}],
+						previewUrl: 'stub/images/preview/lush.jpg',
+						sourceUrl: 'stub/images/source/lush.jpg'
+					},
+					quantity: 8
+				}]
+			});
+		});
+	});
 });

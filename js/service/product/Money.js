@@ -59,6 +59,13 @@
 			return new Money(this.__value * multiple, this.__unit);
 		};
 
+		proto.toJson = function(){
+			return {
+				value: this.__value,
+				unit: this.__unit
+			};
+		};
+
 		return Money;
 	});
 })();

@@ -17,6 +17,8 @@
 		proto.__parseJson = function(json){
 			this.__id = json.id;
 			this.__name = json.name;
+			this.__sourceUrl = json.sourceUrl;
+			this.__previewUrl = json.previewUrl;
 
 			this.__priceOptions = [];
 			var length = json.priceOptions.length;
@@ -51,8 +53,26 @@
 		 * ****************  End: do refactoring of Package   ***********************
 		 ******************************************************************************/
 
-		proto.toJson = function(){
+		proto.toJsonOld = function(){
 			return this.__json;
+		};
+
+		proto.toJson = function(){
+			var json = {
+				id: this.__id,
+				name: this.__name,
+				sourceUrl: this.__sourceUrl,
+				previewUrl: this.__previewUrl,
+				priceOptions: []
+			};
+
+			var price;
+			for(var i=0, l=this.__priceOptions.length; i<l; i++){
+				price = this.__priceOptions[i];
+				json.priceOptions.push(price.toJson());
+			}
+
+			return json;
 		};
 
 		return Product;

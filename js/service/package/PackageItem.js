@@ -32,6 +32,13 @@
 			return this.__product.getId() === productId;
 		};
 
+		proto.toJson = function(){
+			return {
+				quantity: this.__quantity,
+				product: this.__product.toJson()
+			};
+		};
+
 		return PackageItem;
 	}]);
 })();
