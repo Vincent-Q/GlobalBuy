@@ -15,6 +15,32 @@
 		}
 	}
 
+	.separateLine{
+		border-bottom: solid 4px @gray-darker;
+
+		.packageProgress{
+			font-size: @font-size-large;
+
+			.connectedLine{
+				position: relative;
+				top: -8px;
+			}
+
+			.icon{
+				border: 2px solid;
+	    		border-radius: 32px;
+			    padding: 0px;
+			    width: 64px;
+			    height: 64px;
+			    display: inline-block;
+
+			    .glyphicon{
+			    	padding: 10px;
+			    }
+			}
+		}
+	}
+
 	#pckPreviewList{
 		max-height: 250px;
 		overflow: hidden;
@@ -88,6 +114,22 @@
 	.introduction{
 		label, strong, p{
 			font-size: @font-size-small;
+		}
+
+		span{
+			display: inline-block;
+
+			&.price{
+				min-width: 100px;
+			}
+
+			&.quantity{
+				min-width: 42px;
+			}
+
+			&.totalPrice{
+				min-width: 112px;
+			}
 		}
 
 		strong{

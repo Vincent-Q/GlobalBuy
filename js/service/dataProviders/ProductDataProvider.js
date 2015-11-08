@@ -6,10 +6,6 @@
 			'p01': {
 				id:'p01',
 				name: 'Lush New Soap',
-				price: {
-					value: 7.9,
-					unit:'euro'
-				},
 				priceOptions: [{
 					value: 7.9,
 					unit:'euro'
@@ -20,10 +16,6 @@
 			'p02': {
 				id: 'p02',
 				name: 'Aptamil Kindermilch 2+',
-				price: {
-					value: 14.49,
-					unit: 'euro'
-				},
 				priceOptions: [{
 					value: 14.49,
 					unit: 'euro'
@@ -37,10 +29,6 @@
 			'p03': {
 				id:'p03',
 				name: 'Lamy Pen',
-				price: {
-					value: 18.9,
-					unit: 'euro'
-				},
 				priceOptions: [{
 					value: 18.9,
 					unit: 'euro'
@@ -51,10 +39,6 @@
 			'p04': {
 				id: 'p04',
 				name: 'German Sausage',
-				price: {
-					value: 2,
-					unit: 'euro'
-				},
 				priceOptions: [{
 					value: 2,
 					unit: 'euro'
@@ -65,10 +49,6 @@
 			'p05': {
 				id: 'p05',
 				name: 'Lindt Choclate',
-				price: {
-					value: 1.8,
-					unit: 'euro'
-				},
 				priceOptions: [{
 					value: 1.8,
 					unit: 'euro'
