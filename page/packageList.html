@@ -1,6 +1,6 @@
 <ul class="list-group">
-	<li ng-repeat="item in pkgListCtrl.packageList" ng-click="pkgListCtrl.clickItem($index)" class="list-group-item" use-class="preparing: item.status === 'preparing'; delivery: item.status === 'delivery'; finished: item.status === 'finished'">
-		<span class="icon"><span class="glyphicon" use-class="glyphicon-shopping-cart : item.status === 'preparing'; glyphicon-plane: item.status === 'delivery'; glyphicon-check: item.status === 'finished'"></span></span>
+	<li ng-repeat="item in pkgListCtrl.packageList" ng-click="pkgListCtrl.clickItem($index)" class="list-group-item">
+		<span class="icon" use-class="preparing: item.status === 'preparing'; delivery: item.status === 'delivery'; finished: item.status === 'finished'"><span class="glyphicon" use-class="glyphicon-shopping-cart : item.status === 'preparing'; glyphicon-plane: item.status === 'delivery'; glyphicon-check: item.status === 'finished'"></span></span>
 		<span class="time"><small>{{item.deliveryDate}}</small><strong>{{item.goods}}</strong><small class="price">{{item.price}}</small></span>
 	</li>
 </ul>

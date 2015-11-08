@@ -91,71 +91,7 @@
 		}
 
 		.icon{
-			border: 2px solid;
-    		border-radius: 32px;
-		    padding: 0px;
-		    width: 64px;
-		    height: 64px;
-		    display: inline-block;
 		    position: absolute;
-
-		    .glyphicon{
-		    	padding: 10px;
-		    }
-		}
-
-		&.preparing{
-			color: @brand-warning;
-
-			.icon{
-				border-color: @brand-warning;
-			}
-		}
-
-		&.delivery{
-			color: @brand-info;
-		    
-		    .icon{
-		    	border-color: @brand-info;
-		    }
-		}
-
-		&.finished{
-			color: @gray-darker;
-		    
-			.icon{
-		    	border-color: @gray-darker;
-		    }
-		}
-
-		&.preparing > .icon > .glyphicon, &.delivery > .icon > .glyphicon{
-			-webkit-animation-name: 'flight';
-			-webkit-animation-duration: 1s;
-			-webkit-animation-timing-function: ease-in-out;
-			-webkit-animation-iteration-count: infinite;
-		}
-
-		@-webkit-keyframes 'flight' {
-			0% {
-				transform: scale(0);
-			}
-
-			25% {
-				transform: scale(0.25);
-			}
-
-			50% {
-				transform: scale(0.5);
-			}
-
-			75% {
-				transform: scale(0.75);
-			}
-
-			100% {
-				transform: scale(1);
-			}
-
 		}
 	}
 }
