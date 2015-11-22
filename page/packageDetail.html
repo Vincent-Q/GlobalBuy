@@ -1,13 +1,13 @@
 <div id="packageDetail" class="container" ng-app="packageMdl" ng-controller="PackageDetailController">
 	<div class="row head">
-		<div class="col-xs-6 col-xs-offset-3 clear-vertical-padding">
+		<div class="col-xs-6 col-xs-offset-3">
 			<div class="title">
 				<span>Package Detail</span>
 			</div>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-xs-12 clear-vertical-padding separateLine">
+		<div class="col-xs-12 separateLine">
 			<div class="packageProgress">
 				<span class="icon preparing"><span class="glyphicon glyphicon-shopping-cart"></span></span>
 				<span class="connectedLine">-----------------------------</span>
@@ -18,15 +18,15 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-xs-1 clear-vertical-padding">
+		<div class="col-xs-1">
 			<gb-scrolling-list gb-init="listOption"></gb-scrolling-list>
 		</div>
-		<div class="col-xs-4 clear-vertical-padding">
+		<div class="col-xs-4">
 			<div class="source">
 				<img ng-src="{{selectedItem.product.sourceUrl}}" />
 			</div>
 		</div>
-		<div class="col-xs-6 clear-vertical-padding">
+		<div class="col-xs-6">
 			<div class="introduction">
 				<h3>{{selectedItem.product.name}}</h3>
 				<label>Price:</label><span class="price"><strong>{{selectedPrice.value | currency:selectedPrice.unit}}</strong></span>

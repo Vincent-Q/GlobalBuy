@@ -1,6 +1,6 @@
 <div id="login" class="container" ng-app="loginMdl" ng-controller="LoginController as loginCtrl">
 	<div class="row">
-		<div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 clear-vertical-padding">
+		<div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3">
 			<div class="title">
 				<img src="img/Global_title.png">
 				<img src="img/Earth_title.png">
@@ -9,15 +9,15 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 clear-vertical-padding contentBlock">
+		<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 contentBlock">
 			<input type="text" class="form-control input-lg" placeholder="User ID" ng-model="loginCtrl.userName">
 		</div>
-		<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 clear-vertical-padding contentBlock">
+		<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 contentBlock">
 			<input type="password" class="form-control input-lg" placeholder="Password" ng-model="loginCtrl.pwd">
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 clear-vertical-padding contentBlock">
+		<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 contentBlock">
 			<div class="rememberMe">
 				<div class="check-box">
 					<span use-class="selected : loginCtrl.isStored" ng-click="loginCtrl.select()"></span>
@@ -25,12 +25,12 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 clear-vertical-padding contentBlock">
+		<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 contentBlock">
 			<input type="button" class="btn btn-lg btn-primary btn-block" value="Login" ng-click="loginCtrl.login()">
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 clear-vertical-padding">
+		<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0">
 			<label class="footBar labelFont">© Copyright WangWang_SEU Corporation</label>
 		</div>
 	</div>
