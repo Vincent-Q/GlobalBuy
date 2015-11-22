@@ -1,6 +1,6 @@
 <div id="packageListNew" class="container" ng-app="packageMdl" ng-controller="PackageListController as pkgListCtrl">
 	<div class="row head">
-		<div class="col-xs-6 col-xs-offset-3">
+		<div class="col-xs-6 col-xs-offset-3 clear-vertical-padding">
 			<div class="title">
 				<img src="img/Global_title_white.png">
 				<img src="img/Earth_title.png">
@@ -9,7 +9,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-xs-12 sectionTitle">
+		<div class="col-xs-12 clear-vertical-padding sectionTitle">
 			<ul class="nav nav-tabs">
 				<li role="presentation" use-class="active: pkgListCtrl.isMyPackagesActive()">
 					<a ui-sref="packageList.myPackages" ng-click="pkgListCtrl.selectMyPackages()">My Packages</a>
@@ -22,6 +22,6 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-xs-12" ui-view></div>
+		<div class="col-xs-12 clear-vertical-padding" ui-view></div>
 	</div>
 </div>
