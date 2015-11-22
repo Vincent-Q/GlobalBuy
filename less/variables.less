@@ -1,3 +1,5 @@
+@import "less/variables.less";
+
 //
 // Variables
 // -------------------------------------------
@@ -11,6 +13,8 @@
 @font-size-base:				ceil(@font-size-small * 1.2);
 @font-size-middle:				ceil(@font-size-small * 1.7);
 @font-size-large:				ceil(@font-size-small * 2);
+
+@input-font-weight:				100;		// used by forms.less
 
 
 //== layout
@@ -39,13 +43,18 @@
 
 @label-text-color:					@base-text-color;
 
-@check-box-selected-color:			@base-primary;
-@check-box-cancel-color:			@base-grey-color;
+@check-box-selected-color:			@brand-primary;			// used by forms.less
+@check-box-cancel-color:			@gray;					// used by forms.less
 
 
 //== size
 //
 //##
+
+@border-width-lg:				3px;		// used by forms.less, buttons.less
+
+@input-border-width-lg:			@border-width-lg;		// used by itself
+@button-border-width-lg:		@border-width-lg;		// used by itself
 
 @input-height:					116px;
 @input-padding-vertical:		37px;
@@ -67,4 +76,4 @@
 //
 //##
 
-@list-group-item-padding-vertical: 25px;
+@list-item-padding-vertical-lg: @col-padding-vertical;			// used by list-group.less
