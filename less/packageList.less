@@ -74,10 +74,6 @@
 	.list-group-item{
 		font-size: 40px;
 
-		small, strong{
-			padding-left: 32px;
-		}
-
 		.time{
 			padding-left: 64px;
 			&:hover{
@@ -86,13 +82,15 @@
 			}
 
 			.price{
-				float: right;
 				padding-right: 64px;
 			}
 		}
 
-		.icon{
-		    position: absolute;
+		@media (max-width: @grid-float-breakpoint) {
+			.vertical-center-xs{
+				margin-top: 32px;
+				margin-left: 16px;
+			}
 		}
 	}
 }
