@@ -1,6 +1,6 @@
 <ul class="list-group">
 	<li ng-repeat="item in pkgListCtrl.packageList" ng-click="pkgListCtrl.clickItem($index)" class="list-group-item list-item-lg">
-		<div class="row">
+		<div class="row time">
 			<div class="col-xs-2 col-sm-1">
 				<span class="icon vertical-center-xs" use-class="preparing: item.status === 'preparing'; delivery: item.status === 'delivery'; finished: item.status === 'finished'">
 					<span class="glyphicon" use-class="glyphicon-shopping-cart : item.status === 'preparing'; glyphicon-plane: item.status === 'delivery'; glyphicon-check: item.status === 'finished'"></span>
