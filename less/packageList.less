@@ -23,12 +23,16 @@
 		font-size: 34px;
 
 		.nav-tabs, .cursor {
-			margin-left: -15px;
-
 			> li {
 				&.active > a {
 					color: @gray-darker;
 				}
+			}
+		}
+
+		@media (min-width: @grid-float-breakpoint) {
+			.nav-tabs, .cursor{
+				margin-left: -15px;
 			}
 		}
 
@@ -73,6 +77,17 @@
 
 	.list-group-item{
 		font-size: 40px;
+
+		strong{
+			max-width: 90%;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+		    display: inline-block;
+		    line-height: 1.2;
+		    margin-top: 8px;
+		    margin-bottom: -8px;
+		}
 
 		.time{
 			&:hover{

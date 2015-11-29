@@ -28,7 +28,7 @@
 		</div>
 		<div class="col-xs-6">
 			<div class="introduction">
-				<h3>{{selectedItem.product.name}}</h3>
+				<h3 class="text-ellipsis">{{selectedItem.product.name}}</h3>
 				<label>Price:</label><span class="price"><strong>{{selectedPrice.value | currency:selectedPrice.unit}}</strong></span>
 				<label>Quantity:</label><span class="quantity"><strong>{{selectedItem.quantity}}</strong></span>
 				<label>Total:</label><span class="totalPrice"><strong>{{selectedTotalPrice.value | currency:selectedTotalPrice.unit}}</strong></span>
