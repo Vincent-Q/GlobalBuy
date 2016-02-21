@@ -1,5 +1,7 @@
 @import "variables.less";
 
+@margin-bottom-distance: 48px;
+
 #login{
 	background-image: url('../img/loginBg-lg.png');
 	height: 750px;
@@ -7,7 +9,7 @@
 	.title{
 		float: left;
 		padding: 60px 0;
-		margin: 24px 0;
+		margin: 24px 0 @margin-bottom-distance 0;
 
 		img{
 			float:left;
@@ -16,12 +18,12 @@
 	}
 
 	input{
-		margin: 24px 0;
+		margin: 0 0 @margin-bottom-distance 0;
 	}
 
 	.rememberMe{
 		padding: @input-padding-vertical 0px;
-		margin: 24px 0;
+		margin: 0 0 @margin-bottom-distance 0;
 
 		label{
 			font-size: @font-size-middle;
@@ -31,7 +33,7 @@
 	}
 
 	.footBar{
-		margin: 24px 0;
+		margin: 0 0 @margin-bottom-distance 0;
 
 		padding-top: 70px;
 		font-size: @font-size-small;
