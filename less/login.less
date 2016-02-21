@@ -12,8 +12,20 @@
 		margin: 24px 0 @margin-bottom-distance 0;
 
 		img{
-			float:left;
-			height: 110px;
+			float: left;
+			height: 76px;
+		}
+
+		@media (min-width: 570px){
+			img{
+				height: 90px;
+			}
+		}
+
+		@media (min-width: @screen-tablet){
+			img{
+				height: 110px;
+			}
 		}
 	}
 
