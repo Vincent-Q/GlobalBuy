@@ -6,6 +6,10 @@
 	background-image: url('../img/loginBg-lg.png');
 	height: 750px;
 
+	.pull-right{
+		margin-right: -30px !important;
+	}
+
 	.title{
 		float: left;
 		padding: 60px 0;
@@ -13,18 +17,12 @@
 
 		img{
 			float: left;
-			height: 76px;
+			height: 110px;
 		}
 
-		@media (min-width: 570px){
+		@media (min-width: @screen-phone) and (max-width: @screen-tablet){
 			img{
-				height: 90px;
-			}
-		}
-
-		@media (min-width: @screen-tablet){
-			img{
-				height: 110px;
+				height: 80px;
 			}
 		}
 	}

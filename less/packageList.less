@@ -6,6 +6,10 @@
 		background-image: url('../img/Head.png');
 		min-height: 180px;
 
+		.pull-right{
+			margin-right: -30px !important;
+		}
+
 		.title{
 			float: left;
 			padding: 10px 0;
@@ -14,6 +18,12 @@
 			img{
 				float:left;
 				height: 110px;
+			}
+
+			@media (min-width: @screen-phone) and (max-width: @screen-tablet){
+				img{
+					height: 80px;
+				}
 			}
 		}
 	}
