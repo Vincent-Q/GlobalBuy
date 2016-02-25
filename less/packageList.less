@@ -1,5 +1,6 @@
 @import "variables.less";
 @import "less/variables.less";
+@import "glyph.less";
 
 #packageListNew{
 	.head{
@@ -30,7 +31,7 @@
 
 	.sectionTitle{
 		border-bottom: solid 4px @gray-darker;
-		font-size: 34px;
+		.glyph-content-text;
 
 		.nav-tabs, .cursor {
 			> li {
@@ -97,6 +98,16 @@
 		    line-height: 1.2;
 		    margin-top: 8px;
 		    margin-bottom: -8px;
+
+		    .glyph-content-text-bold;
+		}
+
+		small{
+			.glyph-content-text;
+		}
+
+		.glyphicon{
+			.glyph-content-text-bold;
 		}
 
 		.time{
